@@ -396,8 +396,6 @@ body {
 /* About Us Section */
 .about-card {
   padding: 40px;
-  background-color: var(--card-bg);
-  border: 1px solid var(--border-color);
   border-radius: 12px;
   max-width: 750px;
   margin: 0 auto;

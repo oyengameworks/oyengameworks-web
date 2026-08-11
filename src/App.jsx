@@ -310,7 +310,7 @@ function App() {
             {activePage === 'news' && (
               <section id="news" className="section news-section">
                 <Helmet>
-                  <title>Latest News | Oyen Gameworks</title>
+                  <title>News | Oyen Gameworks</title>
                   <meta name="description" content="Stay updated with the latest news, game releases, and updates from Oyen Gameworks." />
                 </Helmet>
                 <div className="news-grid">
