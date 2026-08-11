@@ -1,16 +1,17 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async';
 import './App.css'
 
 function App() {
   const [activePage, setActivePage] = useState('home')
-  const [selectedNews, setSelectedNews] = useState(null) // State to store the selected news item
+  const [selectedNews, setSelectedNews] = useState(null)
 
   const logoUrl = '/oyengameworks.png'
   const ig = '/instagram.png'
 
   const navigateTo = (page) => {
     setActivePage(page)
-    setSelectedNews(null) // Reset news detail when changing pages
+    setSelectedNews(null)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
@@ -46,7 +47,7 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
       date: 'March 22, 2026',
       summary: 'Guess who is behind this team?',
       content: `Hello, Oyen Gameworks!
-      Welcome to the world of gameram development.
+      Welcome to the world of game development.
       For More Info: https://www.instagram.com/p/Dawm9INGMrp/?img_index=1`,
       image: '/news2.png',
     }
@@ -82,6 +83,20 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
       image: '/najih.png'
     },
   ]
+
+  // Structured Data (JSON-LD) untuk Google Search
+  const jsonLdData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Oyen Gameworks",
+    "url": "https://oyengameworks-web.vercel.app/",
+    "logo": "https://oyengameworks-web.vercel.app/oyengameworks.png",
+    "description": "Indie game studio born out of Gameseed 2026 creating innovative games.",
+    "sameAs": [
+      "https://www.instagram.com/direct/t/18067331291452366",
+      "https://oyen-gameworks.itch.io/"
+    ]
+  };
 
   return (
     <div className="app-container">
@@ -143,6 +158,10 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
         {/* NEWS DETAIL VIEW */}
         {selectedNews ? (
           <section className="section news-detail-section">
+            <Helmet>
+              <title>{`${selectedNews.title} | Oyen Gameworks News`}</title>
+              <meta name="description" content={selectedNews.summary} />
+            </Helmet>
             <button className="back-btn" onClick={() => setSelectedNews(null)}>
               ← Back to News
             </button>
@@ -164,6 +183,14 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
             {/* HOME PAGE */}
             {activePage === 'home' && (
               <section className="section home-section">
+                <Helmet>
+                  <title>Oyen Gameworks | Indie Game Studio</title>
+                  <meta name="description" content="Welcome to Oyen Gameworks. Explore our games including Catty Cardy and stay updated with studio news." />
+                  <script type="application/ld+json">
+                    {JSON.stringify(jsonLdData)}
+                  </script>
+                </Helmet>
+
                 <div className="hero-banner">
                   <h1>Welcome to <span className="highlight-text">Oyen Gameworks</span></h1>
                 </div>
@@ -232,6 +259,10 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
             {/* ABOUT PAGE */}
             {activePage === 'about' && (
               <section id="about" className="section about-section">
+                <Helmet>
+                  <title>About Us | Oyen Gameworks</title>
+                  <meta name="description" content="Learn more about Oyen Gameworks, an indie studio born out of Gameseed 2026." />
+                </Helmet>
                 <div className="about-card">
                   <img src={logoUrl} alt="Oyen Gameworks Logo" className="about-logo-img" />
                   <div className="about-content">
@@ -247,6 +278,10 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
             {/* PROJECTS PAGE */}
             {activePage === 'projects' && (
               <section id="projects" className="section projects-section">
+                <Helmet>
+                  <title>Projects | Oyen Gameworks</title>
+                  <meta name="description" content="Check out projects created by Oyen Gameworks like Catty Cardy and more." />
+                </Helmet>
                 <div className="projects-container">
                   <div className="projects-grid">
                     {projects.map((project) => (
@@ -275,6 +310,10 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
             {/* NEWS PAGE */}
             {activePage === 'news' && (
               <section id="news" className="section news-section">
+                <Helmet>
+                  <title>Latest News | Oyen Gameworks</title>
+                  <meta name="description" content="Stay updated with the latest news, game releases, and updates from Oyen Gameworks." />
+                </Helmet>
                 <div className="news-grid">
                   {newsList.map((item) => (
                     <div 
@@ -300,7 +339,10 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
             {/* TEAM PAGE */}
             {activePage === 'team' && (
               <section id="team" className="section team-section">
-                {/* Team Members Grid */}
+                <Helmet>
+                  <title>Our Team | Oyen Gameworks</title>
+                  <meta name="description" content="Meet the developers, designers, and artists behind Oyen Gameworks." />
+                </Helmet>
                 <div className="team-grid">
                   {teamMembers.map((member) => (
                     <div key={member.id} className="team-card">
