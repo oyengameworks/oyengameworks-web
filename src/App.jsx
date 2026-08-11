@@ -39,6 +39,16 @@ function App() {
 
 Thank you to the Oyen Gameworks team for their hard work, even under tight deadlines.`,
       image: 'https://img.itch.zone/aW1nLzI4MjcxMjA0LnBuZw==/original/lEdJ%2BY.png',
+    },
+    {
+      id: 2,
+      title: 'A New Indie Game Studio Has Arrived!',
+      date: 'March 22, 2026',
+      summary: 'Guess who is behind this team?',
+      content: `Hello, Oyen Gameworks!
+      Welcome to the world of gameram development.
+      For More Info: https://www.instagram.com/p/Dawm9INGMrp/?img_index=1`,
+      image: '/news2.png',
     }
   ]
 
@@ -78,9 +88,9 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
       {/* Floating Sidebar */}
       <aside className="floating-sidebar">
         <a 
-          href="https://instagram.com" 
+          href="https://www.instagram.com/direct/t/18067331291452366" 
           target="_blank" 
-          rel="noopener noreferrer" 
+          rel="noopener noreferrer"   
           className="sidebar-link instagram"
           title="Contact Us via Instagram"
         >
