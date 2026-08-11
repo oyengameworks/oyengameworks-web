@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async'
 import './App.css'
 
 function App() {
@@ -36,9 +36,7 @@ function App() {
       title: 'Catty Cardy Officially Released on Itch.io!',
       date: 'July 4, 2026',
       summary: 'Our absurd cat meme card battle game is now playable for free!',
-      content: `We are pleased to announce that we are developing a game for Gameseed 2026 and our first project for Oyen Gameworks.
-
-Thank you to the Oyen Gameworks team for their hard work, even under tight deadlines.`,
+      content: `We are pleased to announce that we are developing a game for Gameseed 2026 and our first project for Oyen Gameworks.\n\nThank you to the Oyen Gameworks team for their hard work, even under tight deadlines.`,
       image: 'https://img.itch.zone/aW1nLzI4MjcxMjA0LnBuZw==/original/lEdJ%2BY.png',
     },
     {
@@ -46,9 +44,7 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
       title: 'A New Indie Game Studio Has Arrived!',
       date: 'March 22, 2026',
       summary: 'Guess who is behind this team?',
-      content: `Hello, Oyen Gameworks!
-      Welcome to the world of game development.
-      For More Info: https://www.instagram.com/p/Dawm9INGMrp/?img_index=1`,
+      content: `Hello, Oyen Gameworks!\n\nWelcome to the world of game development.\n\nFor More Info: https://www.instagram.com/p/Dawm9INGMrp/?img_index=1`,
       image: '/news2.png',
     }
   ]
@@ -84,7 +80,7 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
     },
   ]
 
-  // Structured Data (JSON-LD) untuk Google Search
+  // Structured Data (JSON-LD) untuk Google Search Engine
   const jsonLdData = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -96,7 +92,7 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
       "https://www.instagram.com/direct/t/18067331291452366",
       "https://oyen-gameworks.itch.io/"
     ]
-  };
+  }
 
   return (
     <div className="app-container">
@@ -108,6 +104,7 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
           rel="noopener noreferrer"   
           className="sidebar-link instagram"
           title="Contact Us via Instagram"
+          aria-label="Instagram Contact"
         >
           <img src={ig} alt="Instagram" className="logo-img-header" />
         </a>
@@ -199,6 +196,7 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
                   {/* News Subsection (Left) */}
                   <div className="home-block">
                     <div className="section-header-flex">
+                      <h2>Latest News</h2>
                       <button className="see-more-btn" onClick={() => navigateTo('news')}>
                         View All News →
                       </button>
@@ -227,6 +225,7 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
                   {/* Projects Subsection (Right) */}
                   <div className="home-block">
                     <div className="section-header-flex">
+                      <h2>Our Projects</h2>
                       <button className="see-more-btn" onClick={() => navigateTo('projects')}>
                         View All Projects →
                       </button>
@@ -268,7 +267,7 @@ Thank you to the Oyen Gameworks team for their hard work, even under tight deadl
                   <div className="about-content">
                     <h1>Oyen Gameworks</h1>
                     <p className="about-text">
-                      An indie studio born out of the Gameseed 2026 competition, we want to create a game you are sure to love
+                      An indie studio born out of the Gameseed 2026 competition, we want to create a game you are sure to love.
                     </p>
                   </div>
                 </div>
