@@ -1,0 +1,665 @@
+:root {
+  --bg-color: #0d0d0d;
+  --card-bg: #171717;
+  --accent-orange: #ff6b00;
+  --accent-hover: #ff8c00;
+  --text-main: #f5f5f5;
+  --text-muted: #a3a3a3;
+  --border-color: #262626;
+}
+
+/* Base Body Styles */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+/* Container utama */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Header & Navbar */
+.header {
+  position: sticky;
+  top: 0;
+  background-color: rgba(13, 13, 13, 0.95);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 8%;
+  border-bottom: 1px solid var(--border-color);
+  z-index: 90;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img-header {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent-orange);
+}
+
+.navbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.navbar button {
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navbar button:hover {
+  color: var(--accent-orange);
+  background-color: rgba(255, 107, 0, 0.1);
+}
+
+.navbar button.active {
+  color: var(--accent-orange);
+  background-color: rgba(255, 107, 0, 0.15);
+  font-weight: 700;
+}
+
+/* Floating Sidebar */
+.floating-sidebar {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 100;
+}
+
+.sidebar-link {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: #000;
+  border: 1px solid var(--border-color);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-link img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.sidebar-link:hover {
+  transform: scale(1.1) translateY(-2px);
+  background-color: #1a1a1a;
+  box-shadow: 0 6px 15px rgba(255, 107, 0, 0.2);
+}
+
+.sidebar-link::after {
+  content: attr(title);
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
+  background-color: #000000;
+  color: #fffcfc;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), visibility 0.3s ease;
+}
+
+.sidebar-link:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(-60px) scale(1);
+}
+
+/* Layout Section General */
+.home-split-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.section {
+  padding: 60px 8%;
+}
+
+.section-title {
+  font-size: 28px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: var(--accent-orange);
+  text-transform: uppercase;
+}
+
+/* Home Page Styles */
+.hero-banner {
+  text-align: center;
+  padding: 40px 20px 60px;
+}
+
+.hero-banner h1 {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
+
+.hero-banner p {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.highlight-text {
+  color: var(--accent-orange);
+}
+
+.home-block {
+  margin-bottom: 60px;
+}
+
+.section-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-header-flex h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.see-more-btn {
+  background: transparent;
+  border: 1px solid var(--accent-orange);
+  color: var(--accent-orange);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.see-more-btn:hover {
+  background-color: var(--accent-orange);
+  color: #000;
+}
+
+/* News Section & Grid */
+.news-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.news-container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.news-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center;
+}
+
+.news-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.news-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.news-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  background-color: #000;
+  overflow: hidden;
+}
+
+.news-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-tag {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: var(--accent-orange);
+  color: #000;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.news-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-date {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.news-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #fff;
+}
+
+.news-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Styling Kartu Berita yang Bisa Diklik */
+.news-card.clickable {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.news-card.clickable:hover {
+  transform: translateY(-4px);
+}
+
+.read-more-text {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ff8c00; /* Sesuaikan warna aksen */
+}
+
+/* Styling Detail Artikel Berita */
+.news-detail-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-btn {
+  background: transparent;
+  border: 1px solid var(--accent-orange);
+  color: var(--accent-orange);
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: var(--accent-orange);
+  color: #000;
+}
+
+.full-news-article {
+  text-align: left;
+}
+
+.news-detail-title {
+  font-size: 2.2rem;
+  margin: 12px 0 20px 0;
+  line-height: 1.3;
+}
+
+.news-detail-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.news-detail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.news-detail-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* About Us Section */
+.about-card {
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 750px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  text-align: left;
+}
+
+.about-logo-img {
+  height: 180px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.about-content h1 {
+  font-size: 32px;
+  color: var(--accent-orange);
+  margin: 0 0 10px 0;
+}
+
+.about-text {
+  font-size: 16px;
+  color: var(--text-main);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Projects Section */
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.projects-container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  justify-content: center;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-orange);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.project-info h3 {
+  margin: 0 0 8px 0;
+  color: #fff;
+}
+
+.project-info p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #ff8c00; /* Sesuaikan warna aksen */
+}
+
+/* ================= TEAM SECTION ================= */
+.team-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Header Styling */
+.team-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.team-subtitle {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ff8c00; /* Warna aksen Oyen Gameworks */
+  text-transform: uppercase;
+}
+
+.team-header h2 {
+  font-size: 2.5rem;
+  margin: 10px 0;
+  font-weight: 800;
+}
+
+.team-header p {
+  color: #a0a0a0;
+  font-size: 1.05rem;
+}
+
+/* Grid Layout */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+/* Team Card Modern Glassmorphism */
+.team-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 140, 0, 0.4);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+/* Avatar Wrapper & Hover Zoom */
+.team-avatar-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, rgba(255, 140, 0, 0.6), rgba(255, 255, 255, 0.1));
+}
+
+.team-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.4s ease;
+}
+
+.team-card:hover .team-avatar {
+  transform: scale(1.08);
+}
+
+/* Badge Lokasi Kota */
+.team-city-badge {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  color: #e0e0e0;
+}
+
+/* Content Typography */
+.team-name {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.team-role {
+  font-size: 0.9rem;
+  color: #ff8c00;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px 24px;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 13px;
+  background-color: var(--bg-color);
+  box-sizing: border-box;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .home-split-container {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+  }
+  
+  .about-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+    padding: 24px;
+  }
+
+  .floating-sidebar {
+    right: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
