@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oyen Gameworks | Indie Game Studio</title>
+  <meta name="description" content="Oyen Gameworks is an Indonesian indie game studio making playful casual games. Featured project: Catty Cardy." />
+  <link rel="icon" href="src/og.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            oyen: { 50:'#FFF7ED',100:'#FFEDD5',200:'#FED7AA',500:'#F97316',600:'#EA580C',700:'#C2410C' },
+            cream: '#FFFBF5',
+            ink: '#1E1B16'
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"','system-ui','sans-serif'],
+            body: ['Inter','system-ui','sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-stone-950 text-stone-100 font-body antialiased min-h-screen flex flex-col">
+
+  <!-- Minimalist header -->
+  <header class="sticky top-0 z-50 bg-cream/90 dark:bg-stone-950/90 backdrop-blur border-b border-orange-100 dark:border-stone-800">
+    <nav class="px-4 sm:px-6 h-[64px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <img src="src/og.png" alt="Oyen Gameworks logo" class="w-9 h-9 rounded-lg object-cover" />
+        <span class="font-display font-extrabold tracking-tight">Oyen Gameworks</span>
+      </a>
+      <div class="hidden md:flex items-center gap-1 text-[15px] font-medium">
+        <a href="index.html" data-nav="index.html" class="nav-link px-4 py-2 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800">Home</a>
+        <a href="story.html" data-nav="story.html" class="nav-link px-4 py-2 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800">Story</a>
+        <a href="oyenian.html" data-nav="oyenian.html" class="nav-link px-4 py-2 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800">Oyenians</a>
+        <a href="contact.html" data-nav="contact.html" class="nav-link px-4 py-2 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="menuBtn" class="md:hidden w-10 h-10 grid place-items-center rounded-lg border border-orange-200 dark:border-stone-700 bg-white dark:bg-stone-900" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-orange-100 dark:border-stone-800 bg-cream dark:bg-stone-950 px-4 pb-4 pt-2">
+      <a href="index.html" class="block px-3 py-3 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800 font-medium">Home</a>
+      <a href="story.html" class="block px-3 py-3 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800 font-medium">Story</a>
+      <a href="oyenian.html" class="block px-3 py-3 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800 font-medium">Oyenians</a>
+      <a href="contact.html" class="block px-3 py-3 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800 font-medium">Contact</a>
+    </div>
+  </header>
+
+  <!-- About hero -->
+  <section class="relative overflow-hidden">
+    <img src="https://img.itch.zone/aW1nLzI4MjcxMjA0LnBuZw==/original/lEdJ%2BY.png" alt="Catty Cardy artwork" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/60 dark:bg-black/70"></div>
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-28">
+      <h1 class="font-display font-extrabold text-5xl sm:text-7xl text-white leading-[1.02] mt-3">OYEN<br /><span class="text-oyen-500">GAMEWORKS</span></h1>
+      <p class="text-white/85 text-lg mt-5 max-w-2xl leading-relaxed">We're Oyen Gameworks, a small team making casual games. Our debut project is Catty Cardy, a collectible cat card game for Android.</p>
+      <div class="mt-7 flex flex-wrap gap-3">
+        <a href="#highlight" class="bg-oyen-500 hover:bg-oyen-600 text-white px-6 py-3 rounded-xl font-bold transition">Project Highlight →</a>
+        <a href="contact.html" class="bg-white text-ink px-6 py-3 rounded-xl font-bold hover:bg-oyen-100 transition">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Highlight -->
+  <section id="highlight" class="max-w-6xl mx-auto px-4 sm:px-6 py-14">
+    <p class="text-oyen-600 dark:text-orange-400 font-bold text-sm uppercase tracking-widest">Project Highlight</p>
+    <h2 class="font-display font-extrabold text-3xl mt-2">Featured game</h2>
+    <p class="text-stone-600 dark:text-stone-400 mt-2">Click the card for full details.</p>
+    <div id="projectGrid" class="mt-6 grid sm:grid-cols-2 gap-5"></div>
+  </section>
+
+  <!-- Contact redirect -->
+  <section class="max-w-6xl mx-auto px-4 sm:px-6 pb-16">
+    <div class="card bg-white dark:bg-stone-900 rounded-2xl p-8 border border-orange-100 dark:border-stone-800 flex flex-col sm:flex-row sm:items-center gap-5 justify-between">
+      <div>
+        <h2 class="font-display font-extrabold text-2xl">Have a question, or just love cats?</h2>
+        <p class="text-stone-600 dark:text-stone-400 mt-1">Reach us on Instagram or Gmail. We reply fast.</p>
+      </div>
+      <a href="contact.html" class="shrink-0 bg-ink dark:bg-oyen-500 text-white px-7 py-3.5 rounded-xl font-bold hover:bg-oyen-600 transition text-center">Contact Us →</a>
+    </div>
+  </section>
+
+  <!-- Slim footer -->
+  <footer class="mt-auto border-t border-stone-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row sm:items-center gap-5 justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="src/og.png" alt="Oyen Gameworks logo" class="w-9 h-9 rounded-lg object-cover" />
+        <span class="font-display font-extrabold">Oyen Gameworks</span>
+      </a>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-stone-600 dark:text-stone-400">
+        <a href="index.html" class="hover:text-oyen-600">Home</a>
+        <a href="story.html" class="hover:text-oyen-600">Story</a>
+        <a href="oyenian.html" class="hover:text-oyen-600">Oyenians</a>
+        <a href="contact.html" class="hover:text-oyen-600">Contact</a>
+      </div>
+      <div class="flex gap-4 text-sm font-bold">
+        <a href="https://www.instagram.com/oyengameworks.id/" target="_blank" class="hover:text-oyen-600">Instagram ↗</a>
+        <a href="https://oyen-gameworks.itch.io/" target="_blank" class="hover:text-oyen-600">itch.io ↗</a>
+      </div>
+    </div>
+    <div class="border-t border-orange-100 dark:border-stone-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-xs text-stone-500 dark:text-stone-400">© <span id="year">2026</span> Oyen Gameworks.</div>
+    </div>
+  </footer>
+
+  <!-- Detail modal -->
+  <div id="modal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/60 p-4">
+    <div class="bg-white dark:bg-stone-900 w-full max-w-2xl max-h-[88vh] overflow-y-auto rounded-2xl">
+      <div class="flex items-start justify-between gap-4 p-6 pb-0">
+        <h3 id="modalTitle" class="font-display font-extrabold text-2xl"></h3>
+        <button id="modalClose" class="w-9 h-9 shrink-0 rounded-full bg-cream dark:bg-stone-800 border border-orange-200 dark:border-stone-700 font-bold hover:bg-oyen-100 dark:hover:bg-stone-700" aria-label="Close">✕</button>
+      </div>
+      <div id="modalBody" class="p-6 pt-4"></div>
+    </div>
+  </div>
+
+  <script src="js/site.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

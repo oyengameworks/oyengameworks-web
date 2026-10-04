@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Oyen Gameworks</title>
+  <meta name="description" content="Contact Oyen Gameworks via Instagram or Gmail." />
+  <link rel="icon" href="src/og.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            oyen: { 50:'#FFF7ED',100:'#FFEDD5',200:'#FED7AA',500:'#F97316',600:'#EA580C',700:'#C2410C' },
+            cream: '#FFFBF5',
+            ink: '#1E1B16'
+          },
+          fontFamily: {
+            display: ['"Plus Jakarta Sans"','system-ui','sans-serif'],
+            body: ['Inter','system-ui','sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-stone-950 text-stone-100 font-body antialiased min-h-screen flex flex-col">
+
+  <header class="sticky top-0 z-50 bg-cream/90 dark:bg-stone-950/90 backdrop-blur border-b border-orange-100 dark:border-stone-800">
+    <nav class="px-4 sm:px-6 h-[64px] flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-2.5">
+        <img src="src/og.png" alt="Oyen Gameworks logo" class="w-9 h-9 rounded-lg object-cover" />
+        <span class="font-display font-extrabold tracking-tight">Oyen Gameworks</span>
+      </a>
+      <div class="hidden md:flex items-center gap-1 text-[15px] font-medium">
+        <a href="index.html" data-nav="index.html" class="nav-link px-4 py-2 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800">Home</a>
+        <a href="story.html" data-nav="story.html" class="nav-link px-4 py-2 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800">Story</a>
+        <a href="oyenian.html" data-nav="oyenian.html" class="nav-link px-4 py-2 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800">Oyenians</a>
+        <a href="contact.html" data-nav="contact.html" class="nav-link px-4 py-2 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="menuBtn" class="md:hidden w-10 h-10 grid place-items-center rounded-lg border border-orange-200 dark:border-stone-700 bg-white dark:bg-stone-900" aria-label="Menu">☰</button>
+      </div>
+    </nav>
+    <div id="mobileMenu" class="md:hidden hidden border-t border-orange-100 dark:border-stone-800 bg-cream dark:bg-stone-950 px-4 pb-4 pt-2">
+      <a href="index.html" class="block px-3 py-3 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800 font-medium">Home</a>
+      <a href="story.html" class="block px-3 py-3 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800 font-medium">Story</a>
+      <a href="oyenian.html" class="block px-3 py-3 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800 font-medium">Oyenian</a>
+      <a href="contact.html" class="block px-3 py-3 rounded-lg hover:bg-oyen-100 dark:hover:bg-stone-800 font-medium">Contact</a>
+    </div>
+  </header>
+
+  <section class="relative overflow-hidden">
+    <img src="src/contact.jpg" alt="Contact Oyen Gameworks" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/65"></div>
+    <div class="relative max-w-3xl mx-auto px-4 sm:px-6 py-16 sm:py-24">
+      <p class="text-orange-400 font-bold text-sm uppercase tracking-widest">Contact</p>
+      <h1 class="font-display font-extrabold text-4xl sm:text-6xl tracking-tight mt-2 text-white">Let's talk.</h1>
+      <p class="text-white/85 text-lg mt-4 leading-relaxed">Press, publishers, collaborators, or fellow cat enjoyers. Pick your channel.</p>
+    </div>
+  </section>
+
+  <section class="max-w-3xl mx-auto px-4 sm:px-6 py-10">
+    <div class="grid sm:grid-cols-2 gap-5">
+      <a href="https://www.instagram.com/oyengameworks.id/" target="_blank" class="card bg-white dark:bg-stone-900 rounded-2xl p-6 border border-orange-100 dark:border-stone-800 block">
+        <p class="text-3xl">📸</p>
+        <h2 class="font-display font-bold text-xl mt-3">Instagram</h2>
+          <p class="text-stone-600 dark:text-stone-400 text-sm mt-1">Fastest response: DM us anytime.</p>
+        <p class="mt-3 font-bold text-oyen-600 dark:text-orange-400">@oyengameworks.id ↗</p>
+      </a>
+      <a href="mailto:oyengameworks@gmail.com?subject=Hello%20Oyen%20Gameworks" class="card bg-white dark:bg-stone-900 rounded-2xl p-6 border border-orange-100 dark:border-stone-800 block">
+        <p class="text-3xl">✉️</p>
+        <h2 class="font-display font-bold text-xl mt-3">Gmail</h2>
+        <p class="text-stone-600 dark:text-stone-400 text-sm mt-1">For formal stuff and longer messages.</p>
+        <p class="mt-3 font-bold text-oyen-600 dark:text-orange-400 break-all">oyengameworks@gmail.com ↗</p>
+      </a>
+    </div>
+  </section>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 pb-16"></div>
+
+  <footer class="mt-auto border-t border-stone-800">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-8 flex flex-col sm:flex-row sm:items-center gap-5 justify-between">
+      <a href="index.html" class="flex items-center gap-2">
+        <img src="src/og.png" alt="Oyen Gameworks logo" class="w-9 h-9 rounded-lg object-cover" />
+        <span class="font-display font-extrabold">Oyen Gameworks</span>
+      </a>
+      <div class="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-stone-600 dark:text-stone-400">
+        <a href="index.html" class="hover:text-oyen-600">Home</a>
+        <a href="story.html" class="hover:text-oyen-600">Story</a>
+        <a href="oyenian.html" class="hover:text-oyen-600">Oyenian</a>
+        <a href="contact.html" class="hover:text-oyen-600">Contact</a>
+      </div>
+      <div class="flex gap-4 text-sm font-bold">
+        <a href="https://www.instagram.com/oyengameworks.id/" target="_blank" class="hover:text-oyen-600">Instagram ↗</a>
+        <a href="https://oyen-gameworks.itch.io/" target="_blank" class="hover:text-oyen-600">itch.io ↗</a>
+      </div>
+    </div>
+    <div class="border-t border-orange-100 dark:border-stone-800">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 text-xs text-stone-500 dark:text-stone-400">© <span id="year">2026</span> Oyen Gameworks.</div>
+    </div>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

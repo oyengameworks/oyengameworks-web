@@ -1,0 +1,31 @@
+/* Oyen Gameworks: minimal static styling */
+html { -webkit-tap-highlight-color: transparent; }
+body { text-rendering: optimizeLegibility; }
+
+.card { box-shadow: 0 1px 3px rgba(30,27,22,.06); transition: box-shadow .15s ease, border-color .15s ease; }
+button.card, a.card { cursor: pointer; }
+button.card:hover, a.card:hover { border-color: #FDBA74; box-shadow: 0 4px 14px rgba(30,27,22,.08); }
+
+.nav-link.active { background: #FFEDD5; }
+html.dark { color-scheme: dark; }
+html.dark .nav-link.active { background: #292524; }
+
+#modal.show { display: flex; }
+
+/* Smooth page transition */
+body { animation: pageIn .35s ease both; }
+@keyframes pageIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* Subtle pop on interactive elements */
+button { transition: transform .12s ease; }
+button:active { transform: scale(.96); }
+#modal.show > div { animation: modalPop .22s ease both; }
+@keyframes modalPop { from { transform: scale(.93); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Story timeline (static) */
+.timeline { position: relative; }
+.timeline::before { content: ''; position: absolute; left: 11px; top: 10px; bottom: 10px; width: 2px; background: #FED7AA; }
+html.dark .timeline::before { background: #44403c; }
+.timeline-item { position: relative; padding-left: 44px; }
+.timeline-dot { position: absolute; left: 4px; top: 4px; width: 16px; height: 16px; border-radius: 9999px; background: #F97316; border: 3px solid #FFFBF5; }
+html.dark .timeline-dot { border-color: #0c0a09; }
